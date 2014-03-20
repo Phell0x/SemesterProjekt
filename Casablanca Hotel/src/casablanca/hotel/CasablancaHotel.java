@@ -10,6 +10,7 @@ package casablanca.hotel;
  */
 
 //Contains the main of the program
+//Kan du se det her
 
 
 public class CasablancaHotel {
