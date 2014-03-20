@@ -30,6 +30,7 @@ public class CasablancaHotelGUI extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jTabbedPane3 = new javax.swing.JTabbedPane();
+        jTabbedPane4 = new javax.swing.JTabbedPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -47,6 +48,7 @@ public class CasablancaHotelGUI extends javax.swing.JFrame {
         jTabbedPane1.addTab("tab1", jPanel1);
         jTabbedPane1.addTab("tab2", jTabbedPane2);
         jTabbedPane1.addTab("tab3", jTabbedPane3);
+        jTabbedPane1.addTab("tab4", jTabbedPane4);
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -107,5 +109,6 @@ public class CasablancaHotelGUI extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
+    private javax.swing.JTabbedPane jTabbedPane4;
     // End of variables declaration//GEN-END:variables
 }
