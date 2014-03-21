@@ -14,6 +14,6 @@ package casablanca.hotel;
 //Main class
 
 
-public class CasablancaHotelMain {
+public class CasablancaHotelController {
 
 }

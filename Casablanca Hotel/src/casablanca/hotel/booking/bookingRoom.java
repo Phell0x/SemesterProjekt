@@ -10,6 +10,12 @@ package casablanca.hotel.booking;
  */
 
 //Contains the rooms of the hotel with the prices
-public interface bookingRoom {
+public class bookingRoom 
+{
     
+    public int Single = 60;
+    public int Double = 80;
+    public int Family = 100;
+   
+
 }

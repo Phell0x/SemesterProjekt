@@ -3,7 +3,10 @@
  * and open the template in the editor.
  */
 package casablanca.hotel;
-import casablanca.hotel.booking.bookingRoom;
+import casablanca.hotel.booking.*;
+import java.util.Scanner;
+
+
 /**
  *
  * @author kaihultmann
@@ -289,8 +292,13 @@ public class CasablancaHotelGUI extends javax.swing.JFrame {
 
     private void jButtonSaveBookingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSaveBookingActionPerformed
         {
+          
+            jLabelBookingNr.setText();
+            
+            
+        }
             if (jRadioButtonSingle.isSelected()) {
-                jLabelPrice.setText(Double.);
+                jLabelPrice.setText(casablanca.hotel.booking.bookingRoom.getSingle);
 
                 }
                 
