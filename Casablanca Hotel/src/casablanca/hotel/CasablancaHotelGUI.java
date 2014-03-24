@@ -3,9 +3,9 @@
  * and open the template in the editor.
  */
 package casablanca.hotel;
+
 import casablanca.hotel.booking.*;
 import java.util.Scanner;
-
 
 /**
  *
@@ -54,8 +54,8 @@ public class CasablancaHotelGUI extends javax.swing.JFrame {
         jButtonClearBooking = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jButtonSaveCheckIn = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        jTextFieldCheckName = new javax.swing.JTextField();
+        jTextFieldCheckBookNo = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
@@ -221,10 +221,25 @@ public class CasablancaHotelGUI extends javax.swing.JFrame {
         jTabbedPaneMenu.addTab("Booking", jPanel1);
 
         jButtonSaveCheckIn.setText("Save Check-In");
+        jButtonSaveCheckIn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSaveCheckInActionPerformed(evt);
+            }
+        });
 
-        jTextField1.setText("Name");
+        jTextFieldCheckName.setText("Name");
+        jTextFieldCheckName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldCheckNameActionPerformed(evt);
+            }
+        });
 
-        jTextField2.setText("Booking Number");
+        jTextFieldCheckBookNo.setText("Booking Number");
+        jTextFieldCheckBookNo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldCheckBookNoActionPerformed(evt);
+            }
+        });
 
         org.jdesktop.layout.GroupLayout jPanel2Layout = new org.jdesktop.layout.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -237,17 +252,17 @@ public class CasablancaHotelGUI extends javax.swing.JFrame {
             .add(jPanel2Layout.createSequentialGroup()
                 .add(27, 27, 27)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                    .add(jTextField1)
-                    .add(jTextField2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE))
+                    .add(jTextFieldCheckName)
+                    .add(jTextFieldCheckBookNo, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE))
                 .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel2Layout.createSequentialGroup()
                 .add(29, 29, 29)
-                .add(jTextField1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(jTextFieldCheckName, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                .add(jTextField2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(jTextFieldCheckBookNo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 128, Short.MAX_VALUE)
                 .add(jButtonSaveCheckIn)
                 .addContainerGap())
@@ -323,55 +338,87 @@ public class CasablancaHotelGUI extends javax.swing.JFrame {
 
     private void jButtonSaveBookingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSaveBookingActionPerformed
         {
-          
-             
-            
+            int phone = Integer.parseInt(jTextFieldPhone.getText());
+            int nights = Integer.parseInt(jTextFieldNights.getText());
+            int checkDate = Integer.parseInt(jTextFieldCheckIn.getText());
+
+
+            Order o = c.createNewOrder(cno, eno, null, null);
+            if (o != null) {
+                jTextFieldAddress.setText(o.getGuestAddress() + "");
+                jTextFieldCheckIn.setText(o.getCheckDate() + "");
+                jTextFieldCountry.setText(o.getGuestCountry() + "");
+                jTextFieldEmail.setText(o.getGuestEmail() + "");
+                jTextFieldName.setText(o.getGuestName() + "");
+                jTextFieldNights.setText(o.getGuestNights() + "");
+                jTextFieldPhone.setText(o.getGuestPhone) + "");
+                jTextFieldTravel.setText(o.getGuestAgency() + "");
+                jLabelStatus.setText("Guest saved!");
+            } else {
+                jLabelStatus.setText("Error!");
+            }
         }
-            if (jRadioButtonSingle.isSelected()) {
-                jLabelPrice.setText("60 dollar");
 
-                }
-                
-                if (jRadioButtonDouble.isSelected()) {
-                    jLabelPrice.setText("80 dollar");
+        if (jRadioButtonSingle.isSelected()) {
+            jLabelPrice.setText("60 dollar");
 
-                    }
-                    
-                    if (jRadioButtonFamily.isSelected()) {
-                        jLabelPrice.setText("100 dollar");              
+        }
 
-                        }
-                        // TODO add your handling code here:
+        if (jRadioButtonDouble.isSelected()) {
+            jLabelPrice.setText("80 dollar");
+
+        }
+
+        if (jRadioButtonFamily.isSelected()) {
+            jLabelPrice.setText("100 dollar");
+
+        }
+        // TODO add your handling code here:
     }//GEN-LAST:event_jButtonSaveBookingActionPerformed
 
     private void jButtonClearBookingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonClearBookingActionPerformed
-            jTextFieldName.setText("Name");
-	    jTextFieldAddress.setText("Address");
-	    jTextFieldCountry.setText("Country");
-	    jTextFieldEmail.setText("Email");
-            jTextFieldNights.setText("No. of nights");
-            jTextFieldPhone.setText("Phone");
-            jTextFieldTravel.setText("Travel Agency");
-            jTextFieldCheckIn.setText("Check In");
-	    jLabelBookingNr.setText("Booking Number");
-            jLabelPrice.setText("Price");
-            jLabelStatus.setText("Status: Not Added");
-            jRadioButtonDouble.setSelected(false);
-            jRadioButtonSingle.setSelected(false);
-            jRadioButtonFamily.setSelected(false);
-          
-       // TODO add your handling code here:
+        jTextFieldName.setText("Name");
+        jTextFieldAddress.setText("Address");
+        jTextFieldCountry.setText("Country");
+        jTextFieldEmail.setText("Email");
+        jTextFieldNights.setText("No. of nights");
+        jTextFieldPhone.setText("Phone");
+        jTextFieldTravel.setText("Travel Agency");
+        jTextFieldCheckIn.setText("Check In");
+        jLabelBookingNr.setText("Booking Number");
+        jLabelPrice.setText("Price");
+        jLabelStatus.setText("Status: Not Added");
+        jRadioButtonDouble.setSelected(false);
+        jRadioButtonSingle.setSelected(false);
+        jRadioButtonFamily.setSelected(false);
+
+        // TODO add your handling code here:
     }//GEN-LAST:event_jButtonClearBookingActionPerformed
 
     private void jTextFieldTravelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldTravelActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldTravelActionPerformed
 
-                    /**
-                     * @param args the command line arguments
-                     */
-    
+    private void jTextFieldCheckBookNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCheckBookNoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldCheckBookNoActionPerformed
 
+    private void jButtonSaveCheckInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSaveCheckInActionPerformed
+
+        Order o = c.getBooking(ono);
+        int ono = Integer.parseInt(jTextFieldNights.getText());
+
+        jTextFieldCheckName.setText(o.getCustomerNo() + "");
+        jTextFieldCheckBookNo.setText(o.getEmployeeNo() + "");
+    }//GEN-LAST:event_jButtonSaveCheckInActionPerformed
+
+    private void jTextFieldCheckNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCheckNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldCheckNameActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -426,10 +473,10 @@ public class CasablancaHotelGUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPaneMenu;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextFieldAddress;
+    private javax.swing.JTextField jTextFieldCheckBookNo;
     private javax.swing.JTextField jTextFieldCheckIn;
+    private javax.swing.JTextField jTextFieldCheckName;
     private javax.swing.JTextField jTextFieldCountry;
     private javax.swing.JTextField jTextFieldEmail;
     private javax.swing.JTextField jTextFieldName;
