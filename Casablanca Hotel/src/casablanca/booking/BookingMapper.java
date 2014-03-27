@@ -92,4 +92,5 @@ public class BookingMapper {
         }
         return rowsInserted == 1;
     }
+    
 }
