@@ -4,8 +4,7 @@
  */
 package casablanca.hotel;
 
-import casablanca.hotel.booking.*;
-import java.util.Scanner;
+import casablanca.booking.*;
 
 /**
  *
@@ -13,9 +12,10 @@ import java.util.Scanner;
  */
 public class CasablancaHotelGUI extends javax.swing.JFrame {
 
-    /**
-     * Creates new form CasablancaHotelGUI
-     */
+    
+    
+    private CasablancaHotelController c = new CasablancaHotelController();
+    
     public CasablancaHotelGUI() {
         initComponents();
     }
@@ -43,7 +43,7 @@ public class CasablancaHotelGUI extends javax.swing.JFrame {
         jTextFieldEmail = new javax.swing.JTextField();
         jTextFieldTravel = new javax.swing.JTextField();
         jTextFieldCheckIn = new javax.swing.JTextField();
-        jTextFieldNights = new javax.swing.JTextField();
+        jTextFieldCheckOutDate = new javax.swing.JTextField();
         jRadioButtonSingle = new javax.swing.JRadioButton();
         jRadioButtonDouble = new javax.swing.JRadioButton();
         jRadioButtonFamily = new javax.swing.JRadioButton();
@@ -97,7 +97,12 @@ public class CasablancaHotelGUI extends javax.swing.JFrame {
             }
         });
 
-        jTextFieldNights.setText("No. of nights");
+        jTextFieldCheckOutDate.setText("Check-Out ");
+        jTextFieldCheckOutDate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldCheckOutDateActionPerformed(evt);
+            }
+        });
 
         jRadioButtonSingle.setText("Single Room(1)");
         jRadioButtonSingle.addActionListener(new java.awt.event.ActionListener() {
@@ -160,7 +165,7 @@ public class CasablancaHotelGUI extends javax.swing.JFrame {
                                     .add(jPanel1Layout.createSequentialGroup()
                                         .add(74, 74, 74)
                                         .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                                            .add(jTextFieldNights, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 113, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                            .add(jTextFieldCheckOutDate, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 113, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                             .add(jTextFieldTravel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 113, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                                     .add(jPanel1Layout.createSequentialGroup()
                                         .add(9, 9, 9)
@@ -202,7 +207,7 @@ public class CasablancaHotelGUI extends javax.swing.JFrame {
                 .add(18, 18, 18)
                 .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jTextFieldCheckIn, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jTextFieldNights, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(jTextFieldCheckOutDate, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(jPanel1Layout.createSequentialGroup()
                         .add(32, 32, 32)
@@ -338,21 +343,25 @@ public class CasablancaHotelGUI extends javax.swing.JFrame {
 
     private void jButtonSaveBookingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSaveBookingActionPerformed
         {
-            int phone = Integer.parseInt(jTextFieldPhone.getText());
-            int nights = Integer.parseInt(jTextFieldNights.getText());
-            int checkDate = Integer.parseInt(jTextFieldCheckIn.getText());
+            int Phone = Integer.parseInt(jTextFieldPhone.getText());
+            int CheckOutDate = Integer.parseInt(jTextFieldCheckOutDate.getText());
+            int CheckInDate = Integer.parseInt(jTextFieldCheckIn.getText());
+            String Name = (jTextFieldCheckIn.getText());
+            String Agency = (jTextFieldCheckIn.getText());
+            String Country = (jTextFieldCheckIn.getText());
+            String Email = (jTextFieldCheckIn.getText());
+            String Address = (jTextFieldCheckIn.getText());
 
-
-            Order o = c.createNewOrder(cno, eno, null, null);
-            if (o != null) {
-                jTextFieldAddress.setText(o.getGuestAddress() + "");
-                jTextFieldCheckIn.setText(o.getCheckDate() + "");
-                jTextFieldCountry.setText(o.getGuestCountry() + "");
-                jTextFieldEmail.setText(o.getGuestEmail() + "");
-                jTextFieldName.setText(o.getGuestName() + "");
-                jTextFieldNights.setText(o.getGuestNights() + "");
-                jTextFieldPhone.setText(o.getGuestPhone) + "");
-                jTextFieldTravel.setText(o.getGuestAgency() + "");
+            bookingRegister br = c.createNewBooking(Phone, CheckOutDate, CheckInDate, Name, Email, Country, Agency, Address);
+            if (br != null) {
+                jTextFieldAddress.setText(br.getGuestAddress() + "");
+                jTextFieldCheckIn.setText(br.getCheckInDate() + "");
+                jTextFieldCountry.setText(br.getGuestCountry() + "");
+                jTextFieldEmail.setText(br.getGuestEmail() + "");
+                jTextFieldName.setText(br.getGuestName() + "");
+                jTextFieldCheckOutDate.setText(br.getCheckOutDate() + "");
+                jTextFieldPhone.setText(br.getPhone() + "");
+                jTextFieldTravel.setText(br.getGuestAgency() + "");
                 jLabelStatus.setText("Guest saved!");
             } else {
                 jLabelStatus.setText("Error!");
@@ -381,7 +390,7 @@ public class CasablancaHotelGUI extends javax.swing.JFrame {
         jTextFieldAddress.setText("Address");
         jTextFieldCountry.setText("Country");
         jTextFieldEmail.setText("Email");
-        jTextFieldNights.setText("No. of nights");
+        jTextFieldCheckOutDate.setText("No. of nights");
         jTextFieldPhone.setText("Phone");
         jTextFieldTravel.setText("Travel Agency");
         jTextFieldCheckIn.setText("Check In");
@@ -405,16 +414,16 @@ public class CasablancaHotelGUI extends javax.swing.JFrame {
 
     private void jButtonSaveCheckInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSaveCheckInActionPerformed
 
-        Order o = c.getBooking(ono);
-        int ono = Integer.parseInt(jTextFieldNights.getText());
-
-        jTextFieldCheckName.setText(o.getCustomerNo() + "");
-        jTextFieldCheckBookNo.setText(o.getEmployeeNo() + "");
+       
     }//GEN-LAST:event_jButtonSaveCheckInActionPerformed
 
     private void jTextFieldCheckNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCheckNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldCheckNameActionPerformed
+
+    private void jTextFieldCheckOutDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCheckOutDateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldCheckOutDateActionPerformed
 
     /**
      * @param args the command line arguments
@@ -477,10 +486,10 @@ public class CasablancaHotelGUI extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldCheckBookNo;
     private javax.swing.JTextField jTextFieldCheckIn;
     private javax.swing.JTextField jTextFieldCheckName;
+    private javax.swing.JTextField jTextFieldCheckOutDate;
     private javax.swing.JTextField jTextFieldCountry;
     private javax.swing.JTextField jTextFieldEmail;
     private javax.swing.JTextField jTextFieldName;
-    private javax.swing.JTextField jTextFieldNights;
     private javax.swing.JTextField jTextFieldPhone;
     private javax.swing.JTextField jTextFieldTravel;
     // End of variables declaration//GEN-END:variables
