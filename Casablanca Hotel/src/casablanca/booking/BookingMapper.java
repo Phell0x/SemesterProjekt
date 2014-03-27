@@ -33,7 +33,7 @@ public class BookingMapper {
             ResultSet rs = statement.executeQuery();
             if (rs.next()) {
                 br = new bookingRegister(ph,
-                        rs.getInt(2),
+                        
                         rs.getInt(3),
                         rs.getInt(4),
                         rs.getString(5),
