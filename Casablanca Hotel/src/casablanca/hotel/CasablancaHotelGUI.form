@@ -78,11 +78,11 @@
                                       <Component id="jLabelStatus" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jTextFieldCheckIn" min="-2" pref="113" max="-2" attributes="0"/>
+                                      <Component id="jTextFieldCheckInDate" min="-2" pref="113" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                                       <Component id="jTextFieldCheckOutDate" min="-2" pref="113" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="jTextFieldTravel" min="-2" pref="113" max="-2" attributes="0"/>
+                                      <Component id="jTextFieldAgency" min="-2" pref="113" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jTextFieldCountry" min="-2" pref="113" max="-2" attributes="0"/>
@@ -92,44 +92,43 @@
                                       <Component id="jTextFieldPhone" min="-2" pref="113" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                      <Component id="jLabelPrice" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace pref="59" max="32767" attributes="0"/>
-                                      <Component id="jLabelBookingNr" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace pref="27" max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                                      <Component id="jLabelRoomPrice" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="jLabelBookingNumber" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="label1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="label2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="label3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabelSingleRoom" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabelDoubleRoom" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabelFamilyRoom" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="textField3" max="32767" attributes="0"/>
-                                          <Component id="textField1" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="textField2" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jTextFieldSingleRoom" pref="36" max="32767" attributes="0"/>
+                                          <Component id="jTextFieldDoubleRoom" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jTextFieldFamilyRoom" alignment="0" max="32767" attributes="0"/>
                                       </Group>
-                                      <EmptySpace max="32767" attributes="0"/>
+                                      <EmptySpace pref="64" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jButtonSaveBooking" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
                                       <Component id="jTextFieldName" min="-2" pref="113" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                                       <Component id="jTextFieldLastName" min="-2" pref="113" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="jTextFieldAddress" min="-2" pref="113" max="-2" attributes="0"/>
                                   </Group>
+                                  <Component id="jButtonSaveBooking" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="245" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -139,25 +138,14 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="label2" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="textField1" alignment="1" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="label1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="textField2" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                          </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jTextFieldName" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jTextFieldLastName" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jTextFieldAddress" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabelSingleRoom" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldSingleRoom" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -167,26 +155,34 @@
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jTextFieldCheckIn" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldCheckInDate" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jTextFieldCheckOutDate" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextFieldTravel" alignment="3" max="32767" attributes="0"/>
+                                  <Component id="jTextFieldAgency" alignment="3" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jTextFieldDoubleRoom" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabelDoubleRoom" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jTextFieldFamilyRoom" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabelFamilyRoom" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="label3" min="-2" max="-2" attributes="0"/>
-                          <Component id="textField3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="jButtonSaveBooking" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabelStatus" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabelPrice" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabelBookingNr" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabelRoomPrice" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabelBookingNumber" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
                           </Group>
@@ -231,20 +227,20 @@
                 <Property name="text" type="java.lang.String" value="Email"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextFieldTravel">
+            <Component class="javax.swing.JTextField" name="jTextFieldAgency">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Travel Agency"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldTravelActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldAgencyActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextFieldCheckIn">
+            <Component class="javax.swing.JTextField" name="jTextFieldCheckInDate">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Check-In"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldCheckInActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldCheckInDateActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextFieldCheckOutDate">
@@ -268,12 +264,12 @@
                 <Property name="text" type="java.lang.String" value="Status: Not added"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabelPrice">
+            <Component class="javax.swing.JLabel" name="jLabelRoomPrice">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Price"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabelBookingNr">
+            <Component class="javax.swing.JLabel" name="jLabelBookingNumber">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Booking Number"/>
               </Properties>
@@ -286,45 +282,42 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonClearBookingActionPerformed"/>
               </Events>
             </Component>
-            <Component class="java.awt.Label" name="label1">
+            <Component class="javax.swing.JTextField" name="jTextFieldName">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Double Room"/>
+                <Property name="text" type="java.lang.String" value="Name"/>
               </Properties>
             </Component>
-            <Component class="java.awt.Label" name="label2">
+            <Component class="javax.swing.JTextField" name="jTextFieldSingleRoom">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="0"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextFieldDoubleRoom">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="0"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldDoubleRoomActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelSingleRoom">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Single Room"/>
               </Properties>
             </Component>
-            <Component class="java.awt.Label" name="label3">
+            <Component class="javax.swing.JTextField" name="jTextFieldFamilyRoom">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="0"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelDoubleRoom">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Double Room"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelFamilyRoom">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Family Room"/>
-              </Properties>
-            </Component>
-            <Component class="java.awt.TextField" name="textField1">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Number"/>
-              </Properties>
-            </Component>
-            <Component class="java.awt.TextField" name="textField2">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Number"/>
-              </Properties>
-            </Component>
-            <Component class="java.awt.TextField" name="textField3">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Arial" size="13" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Number"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textField3ActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JTextField" name="jTextFieldName">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Name"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -349,7 +342,7 @@
                           <Component id="checkbox1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jScrollPane1" min="-2" pref="281" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="410" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="-2" pref="170" max="-2" attributes="0"/>
