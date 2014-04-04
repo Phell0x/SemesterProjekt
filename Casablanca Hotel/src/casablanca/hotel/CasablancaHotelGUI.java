@@ -5,6 +5,7 @@
 package casablanca.hotel;
 
 import casablanca.booking.*;
+;
 
 /**
  *
@@ -12,10 +13,8 @@ import casablanca.booking.*;
  */
 public class CasablancaHotelGUI extends javax.swing.JFrame {
 
-    
-    
     private CasablancaHotelController c = new CasablancaHotelController();
-    
+
     public CasablancaHotelGUI() {
         initComponents();
     }
@@ -57,15 +56,25 @@ public class CasablancaHotelGUI extends javax.swing.JFrame {
         jTextFieldFamilyRoom = new javax.swing.JTextField();
         jLabelDoubleRoom = new javax.swing.JLabel();
         jLabelFamilyRoom = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabelSingleLeft = new javax.swing.JLabel();
+        jLabelDoubleLeft = new javax.swing.JLabel();
+        jLabelFamilyLeft = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jButtonSaveCheckIn = new javax.swing.JButton();
         jTextFieldCheckName = new javax.swing.JTextField();
         jTextFieldCheckBookNo = new javax.swing.JTextField();
-        checkbox1 = new java.awt.Checkbox();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
+        jTextAreaSearchBox = new javax.swing.JTextArea();
+        jTextFieldCheckPhone = new javax.swing.JTextField();
+        jButtonSearch = new javax.swing.JButton();
+        jLabelDMM = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -117,7 +126,7 @@ public class CasablancaHotelGUI extends javax.swing.JFrame {
             }
         });
 
-        jLabelStatus.setText("Status: Not added");
+        jLabelStatus.setText("Status: Do something!");
 
         jLabelRoomPrice.setText("Price");
 
@@ -144,10 +153,23 @@ public class CasablancaHotelGUI extends javax.swing.JFrame {
         jLabelSingleRoom.setText("Single Room");
 
         jTextFieldFamilyRoom.setText("0");
+        jTextFieldFamilyRoom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldFamilyRoomActionPerformed(evt);
+            }
+        });
 
         jLabelDoubleRoom.setText("Double Room");
 
         jLabelFamilyRoom.setText("Family Room");
+
+        jLabel1.setText("Rooms Left");
+
+        jLabelSingleLeft.setText("50");
+
+        jLabelDoubleLeft.setText("50");
+
+        jLabelFamilyLeft.setText("50");
 
         org.jdesktop.layout.GroupLayout jPanel1Layout = new org.jdesktop.layout.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -155,100 +177,111 @@ public class CasablancaHotelGUI extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
                     .add(jPanel1Layout.createSequentialGroup()
                         .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jPanel1Layout.createSequentialGroup()
-                                .add(jButtonClearBooking, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 127, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .add(34, 34, 34)
-                                .add(jLabelStatus))
-                            .add(jPanel1Layout.createSequentialGroup()
-                                .add(jTextFieldCheckInDate, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 113, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .add(12, 12, 12)
-                                .add(jTextFieldCheckOutDate, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 113, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                                .add(jTextFieldAgency, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 113, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                             .add(jPanel1Layout.createSequentialGroup()
                                 .add(jTextFieldCountry, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 113, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                 .add(12, 12, 12)
                                 .add(jTextFieldEmail, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 113, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                                .add(jTextFieldPhone, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 113, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                        .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jPanel1Layout.createSequentialGroup()
-                                .add(24, 24, 24)
-                                .add(jLabelRoomPrice)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .add(jLabelBookingNumber)
-                                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .add(jPanel1Layout.createSequentialGroup()
-                                .add(42, 42, 42)
-                                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                                    .add(jLabelSingleRoom)
-                                    .add(jLabelDoubleRoom)
-                                    .add(jLabelFamilyRoom))
-                                .add(18, 18, 18)
-                                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                                    .add(jTextFieldSingleRoom, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
-                                    .add(jTextFieldDoubleRoom)
-                                    .add(jTextFieldFamilyRoom))
-                                .addContainerGap(64, Short.MAX_VALUE))))
-                    .add(jPanel1Layout.createSequentialGroup()
-                        .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                .add(jTextFieldPhone, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 113, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                             .add(jPanel1Layout.createSequentialGroup()
                                 .add(jTextFieldName, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 113, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                 .add(12, 12, 12)
                                 .add(jTextFieldLastName, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 113, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                                 .add(jTextFieldAddress, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 113, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                            .add(jButtonSaveBooking))
-                        .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .add(jPanel1Layout.createSequentialGroup()
+                                .add(jButtonClearBooking, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 127, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .add(40, 40, 40)
+                                .add(jLabelStatus)
+                                .add(70, 70, 70)
+                                .add(jLabelRoomPrice)))
+                        .add(82, 82, 82)
+                        .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                            .add(jLabelBookingNumber)
+                            .add(jLabel1)))
+                    .add(jPanel1Layout.createSequentialGroup()
+                        .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                            .add(jPanel1Layout.createSequentialGroup()
+                                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                    .add(jButtonSaveBooking)
+                                    .add(jPanel1Layout.createSequentialGroup()
+                                        .add(381, 381, 381)
+                                        .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                            .add(jLabelFamilyRoom, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 85, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                            .add(jLabelSingleRoom))))
+                                .add(18, 18, 18)
+                                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                    .add(jPanel1Layout.createSequentialGroup()
+                                        .add(0, 0, Short.MAX_VALUE)
+                                        .add(jTextFieldSingleRoom, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 36, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                                    .add(jPanel1Layout.createSequentialGroup()
+                                        .add(jTextFieldFamilyRoom, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 36, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                        .add(0, 0, Short.MAX_VALUE))))
+                            .add(jPanel1Layout.createSequentialGroup()
+                                .add(jTextFieldCheckInDate, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 113, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .add(12, 12, 12)
+                                .add(jTextFieldCheckOutDate, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 113, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                                .add(jTextFieldAgency, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 113, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .add(18, 18, 18)
+                                .add(jLabelDoubleRoom)
+                                .add(18, 18, 18)
+                                .add(jTextFieldDoubleRoom, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 36, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(jLabelSingleLeft)
+                            .add(jLabelFamilyLeft)
+                            .add(jLabelDoubleLeft))
+                        .add(22, 22, 22)))
+                .add(0, 14, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jTextFieldName, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jTextFieldLastName, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jTextFieldAddress, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jLabel1))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jTextFieldCountry, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jTextFieldEmail, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jTextFieldPhone, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jTextFieldSingleRoom, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jLabelSingleRoom, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 28, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jLabelSingleLeft))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jTextFieldDoubleRoom, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 28, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                        .add(jTextFieldCheckInDate, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(jTextFieldCheckOutDate, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(jTextFieldAgency)
+                        .add(jLabelDoubleRoom)
+                        .add(jLabelDoubleLeft)))
                 .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(jTextFieldName, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jTextFieldLastName, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jTextFieldAddress, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jLabelSingleRoom, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 28, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jTextFieldSingleRoom, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(jTextFieldCountry, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jTextFieldEmail, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jTextFieldPhone, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(jTextFieldCheckInDate, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jTextFieldCheckOutDate, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jTextFieldAgency))
-                        .add(50, 50, 50))
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(jTextFieldDoubleRoom, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jLabelDoubleRoom))
-                        .add(18, 18, 18)
-                        .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                             .add(jTextFieldFamilyRoom, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jLabelFamilyRoom))
-                        .add(25, 25, 25)))
-                .add(jButtonSaveBooking)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                    .add(jPanel1Layout.createSequentialGroup()
+                            .add(jLabelFamilyRoom)
+                            .add(jLabelFamilyLeft))
+                        .add(41, 41, 41)
                         .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                             .add(jLabelStatus)
                             .add(jLabelRoomPrice)
-                            .add(jLabelBookingNumber))
-                        .add(111, 111, 111))
+                            .add(jLabelBookingNumber)))
                     .add(jPanel1Layout.createSequentialGroup()
-                        .add(jButtonClearBooking)
-                        .add(99, 99, 99))))
+                        .add(28, 28, 28)
+                        .add(jButtonSaveBooking)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                        .add(jButtonClearBooking)))
+                .add(116, 116, 116))
         );
 
         jTabbedPaneMenu.addTab("Booking", jPanel1);
@@ -274,13 +307,25 @@ public class CasablancaHotelGUI extends javax.swing.JFrame {
             }
         });
 
-        checkbox1.setLabel("Checked In");
+        jTextAreaSearchBox.setColumns(20);
+        jTextAreaSearchBox.setRows(5);
+        jScrollPane1.setViewportView(jTextAreaSearchBox);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        jTextFieldCheckPhone.setText("Phone");
+        jTextFieldCheckPhone.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldCheckPhoneActionPerformed(evt);
+            }
+        });
 
-        jButton1.setText("Get Daily List");
+        jButtonSearch.setText("Search");
+        jButtonSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSearchActionPerformed(evt);
+            }
+        });
+
+        jLabelDMM.setText("Dont mind me");
 
         org.jdesktop.layout.GroupLayout jPanel2Layout = new org.jdesktop.layout.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -291,52 +336,90 @@ public class CasablancaHotelGUI extends javax.swing.JFrame {
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
                     .add(jTextFieldCheckName)
                     .add(jTextFieldCheckBookNo, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
-                    .add(checkbox1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .add(jTextFieldCheckPhone, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 45, Short.MAX_VALUE)
                 .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 410, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
             .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel2Layout.createSequentialGroup()
-                .add(170, 170, 170)
+                .add(46, 46, 46)
+                .add(jLabelDMM)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .add(jButtonSearch, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 135, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(34, 34, 34)
                 .add(jButtonSaveCheckIn)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 175, Short.MAX_VALUE)
-                .add(jButton1)
-                .addContainerGap())
+                .add(17, 17, 17))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel2Layout.createSequentialGroup()
-                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jPanel2Layout.createSequentialGroup()
-                        .add(29, 29, 29)
-                        .add(jTextFieldCheckName, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                        .add(jTextFieldCheckBookNo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(44, 44, 44)
-                        .add(checkbox1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 22, Short.MAX_VALUE))
-                    .add(jPanel2Layout.createSequentialGroup()
-                        .add(13, 13, 13)
-                        .add(jScrollPane1)
-                        .add(18, 18, 18)))
+            .add(jPanel2Layout.createSequentialGroup()
+                .add(29, 29, 29)
+                .add(jTextFieldCheckName, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(jTextFieldCheckBookNo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(jTextFieldCheckPhone, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(68, Short.MAX_VALUE))
+            .add(jPanel2Layout.createSequentialGroup()
+                .add(13, 13, 13)
+                .add(jScrollPane1)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jButton1)
-                    .add(jButtonSaveCheckIn))
-                .add(20, 20, 20))
+                    .add(jButtonSearch)
+                    .add(jButtonSaveCheckIn)
+                    .add(jLabelDMM)))
         );
 
         jTabbedPaneMenu.addTab("CheckIn", jPanel2);
+
+        jButton1.setText("Delete Booking");
+
+        jLabel2.setText("No one deleted");
+
+        jTextField1.setText("Name");
+
+        jTextField2.setText("Booking number");
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
+
+        jTextField3.setText("Phone");
 
         org.jdesktop.layout.GroupLayout jPanel3Layout = new org.jdesktop.layout.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(0, 614, Short.MAX_VALUE)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(343, Short.MAX_VALUE)
+                .add(jLabel2)
+                .add(18, 18, 18)
+                .add(jButton1)
+                .add(19, 19, 19))
+            .add(jPanel3Layout.createSequentialGroup()
+                .add(47, 47, 47)
+                .add(jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                    .add(jTextField2)
+                    .add(jTextField1)
+                    .add(jTextField3))
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(0, 232, Short.MAX_VALUE)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel3Layout.createSequentialGroup()
+                .add(32, 32, 32)
+                .add(jTextField1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 11, Short.MAX_VALUE)
+                .add(jTextField3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(jTextField2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(31, 31, 31)
+                .add(jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jButton1)
+                    .add(jLabel2))
+                .addContainerGap())
         );
 
-        jTabbedPaneMenu.addTab("Daily List", jPanel3);
+        jTabbedPaneMenu.addTab("Cancle Booking", jPanel3);
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -348,7 +431,7 @@ public class CasablancaHotelGUI extends javax.swing.JFrame {
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .add(jTabbedPaneMenu, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 278, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(jTabbedPaneMenu, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 251, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -368,48 +451,49 @@ public class CasablancaHotelGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldCheckInDateActionPerformed
 
     private void jButtonSaveBookingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSaveBookingActionPerformed
-        {
-            int Phone = Integer.parseInt(jTextFieldPhone.getText());
-            int CheckOutDate = Integer.parseInt(jTextFieldCheckOutDate.getText());
-            int CheckInDate = Integer.parseInt(jTextFieldCheckInDate.getText());
-            String GuestName = (jTextFieldName.getText());
-            String GuestLastName = (jTextFieldLastName.getText());
-            String GuestAgency = (jTextFieldAgency.getText());
-            String GuestCountry = (jTextFieldCountry.getText());
-            String GuestEmail = (jTextFieldEmail.getText());
-            String GuestAddress = (jTextFieldAddress.getText());
-            int SingleRoom = Integer.parseInt(jTextFieldSingleRoom.getText());
-            int DoubleRoom = Integer.parseInt(jTextFieldDoubleRoom.getText());
-            int FamilyRoom = Integer.parseInt(jTextFieldFamilyRoom.getText());
-            String RoomPrice = (jLabelRoomPrice.getText());
-            
-                      
 
-            BookingRegister br = c.createNewBooking(GuestName, GuestLastName, GuestAddress, GuestCountry, 
-                    GuestEmail, Phone, CheckOutDate, CheckInDate, GuestAgency, RoomPrice, 
-                    SingleRoom, DoubleRoom, FamilyRoom);
-            if (br != null) {
-                jTextFieldName.setText(br.getGuestName() + "");
-                jTextFieldLastName.setText(br.getGuestLastName() + "");
-                jTextFieldAddress.setText(br.getGuestAddress() + "");
-                jTextFieldCountry.setText(br.getGuestCountry() + "");
-                jTextFieldEmail.setText(br.getGuestEmail() + "");
-                jTextFieldPhone.setText(br.getPhone() + "");
-                jTextFieldCheckInDate.setText(br.getCheckInDate() + "");
-                jTextFieldCheckOutDate.setText(br.getCheckOutDate() + "");
-                jTextFieldAgency.setText(br.getGuestAgency() + "");
-                jTextFieldSingleRoom.setText(br.getSingleRoom() + "");
-                jTextFieldDoubleRoom.setText(br.getDoubleRoom() + "");
-                jTextFieldFamilyRoom.setText(br.getFamilyRoom() + "");
-                jLabelStatus.setText("Guest saved!");
-                jLabelRoomPrice.setText(br.getRoomPrice() + "dollar");
-            } else {
-                jLabelStatus.setText("Error!");
-            }
-            
+        int Phone = Integer.parseInt(jTextFieldPhone.getText());
+        int CheckOutDate = Integer.parseInt(jTextFieldCheckOutDate.getText());
+        int CheckInDate = Integer.parseInt(jTextFieldCheckInDate.getText());
+        String GuestName = (jTextFieldName.getText());
+        String GuestLastName = (jTextFieldLastName.getText());
+        String GuestAgency = (jTextFieldAgency.getText());
+        String GuestCountry = (jTextFieldCountry.getText());
+        String GuestEmail = (jTextFieldEmail.getText());
+        String GuestAddress = (jTextFieldAddress.getText());
+        int SingleRoom = Integer.parseInt(jTextFieldSingleRoom.getText());
+        int DoubleRoom = Integer.parseInt(jTextFieldDoubleRoom.getText());
+        int FamilyRoom = Integer.parseInt(jTextFieldFamilyRoom.getText());
+        String RoomPrice = (jLabelRoomPrice.getText());
+
+
+
+        BookingRegister br = c.createNewBooking(GuestName, GuestLastName, GuestAddress, GuestCountry,
+                GuestEmail, Phone, CheckOutDate, CheckInDate, GuestAgency, RoomPrice,
+                SingleRoom, DoubleRoom, FamilyRoom);
+
+//            BookingHotelPrice bhp = c.createNewBookingPrice(RoomPrice, SingleRoom, DoubleRoom, FamilyRoom);
+
+        if (br != null/*& bhp != null*/) {
+            jTextFieldName.setText(br.getGuestName() + "");
+            jTextFieldLastName.setText(br.getGuestLastName() + "");
+            jTextFieldAddress.setText(br.getGuestAddress() + "");
+            jTextFieldCountry.setText(br.getGuestCountry() + "");
+            jTextFieldEmail.setText(br.getGuestEmail() + "");
+            jTextFieldPhone.setText(br.getPhone() + "");
+            jTextFieldCheckInDate.setText(br.getCheckInDate() + "");
+            jTextFieldCheckOutDate.setText(br.getCheckOutDate() + "");
+            jTextFieldAgency.setText(br.getGuestAgency() + "");
+            jTextFieldSingleRoom.setText(br.getSingleRoom() + "");
+            jTextFieldDoubleRoom.setText(br.getDoubleRoom() + "");
+            jTextFieldFamilyRoom.setText(br.getFamilyRoom() + "");
+            jLabelRoomPrice.setText(br.getRoomPrice() + " dollar");
+            jLabelStatus.setText("Guest saved!");
+        } else {
+            jLabelStatus.setText("Error!");
         }
 
-       
+
     }//GEN-LAST:event_jButtonSaveBookingActionPerformed
 
     private void jButtonClearBookingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonClearBookingActionPerformed
@@ -425,7 +509,7 @@ public class CasablancaHotelGUI extends javax.swing.JFrame {
         jLabelBookingNumber.setText("Booking Number");
         jLabelRoomPrice.setText("Price");
         jLabelStatus.setText("Status: Not Added");
-     
+
 
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonClearBookingActionPerformed
@@ -439,8 +523,6 @@ public class CasablancaHotelGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldCheckBookNoActionPerformed
 
     private void jButtonSaveCheckInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSaveCheckInActionPerformed
-
-       
     }//GEN-LAST:event_jButtonSaveCheckInActionPerformed
 
     private void jTextFieldCheckNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCheckNameActionPerformed
@@ -455,10 +537,40 @@ public class CasablancaHotelGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldDoubleRoomActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
+    private void jTextFieldFamilyRoomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldFamilyRoomActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldFamilyRoomActionPerformed
+
+    private void jTextFieldCheckPhoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCheckPhoneActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldCheckPhoneActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void jButtonSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSearchActionPerformed
+
+
+//        int BookingNumber = Integer.parseInt(jTextFieldCheckBookNo.getText());
+        int Phone = Integer.parseInt(jTextFieldCheckPhone.getText());
+        BookingRegister br = c.getBookingSearch(Phone);
+        if (br != null) {
+            jTextFieldCheckPhone.setText(br.getPhone() + "");
+            jTextFieldCheckName.setText(br.getGuestName() + "");
+//            jTextFieldCheckBookingNumber.setText(br.getBookingNumber() + "");
+            jTextAreaSearchBox.setText(c.getSearchDetailsToString() + "");
+            jLabelDMM.setText("Infomration Found!");
+        } else {
+            jLabelDMM.setText("No matching order!");
+        }
+
+    
+    }//GEN-LAST:event_jButtonSearchActionPerformed
+/**
+ * @param args the command line arguments
+ */
+public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -469,23 +581,47 @@ public class CasablancaHotelGUI extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-                }
+                
+
+
+
+}
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CasablancaHotelGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CasablancaHotelGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CasablancaHotelGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CasablancaHotelGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CasablancaHotelGUI.class  
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } 
+
+
+
+catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(CasablancaHotelGUI.class  
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } 
+
+
+
+catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(CasablancaHotelGUI.class  
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } 
+
+
+
+catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(CasablancaHotelGUI.class  
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
-            public void run() {
+        public void run() {
                 new CasablancaHotelGUI().setVisible(true);
             }
         });
@@ -496,15 +632,21 @@ public class CasablancaHotelGUI extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.ButtonGroup buttonGroup4;
     private javax.swing.ButtonGroup buttonGroup5;
-    private java.awt.Checkbox checkbox1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonClearBooking;
     private javax.swing.JButton jButtonSaveBooking;
     private javax.swing.JButton jButtonSaveCheckIn;
+    private javax.swing.JButton jButtonSearch;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabelBookingNumber;
+    private javax.swing.JLabel jLabelDMM;
+    private javax.swing.JLabel jLabelDoubleLeft;
     private javax.swing.JLabel jLabelDoubleRoom;
+    private javax.swing.JLabel jLabelFamilyLeft;
     private javax.swing.JLabel jLabelFamilyRoom;
     private javax.swing.JLabel jLabelRoomPrice;
+    private javax.swing.JLabel jLabelSingleLeft;
     private javax.swing.JLabel jLabelSingleRoom;
     private javax.swing.JLabel jLabelStatus;
     private javax.swing.JPanel jPanel1;
@@ -512,13 +654,17 @@ public class CasablancaHotelGUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPaneMenu;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextAreaSearchBox;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextFieldAddress;
     private javax.swing.JTextField jTextFieldAgency;
     private javax.swing.JTextField jTextFieldCheckBookNo;
     private javax.swing.JTextField jTextFieldCheckInDate;
     private javax.swing.JTextField jTextFieldCheckName;
     private javax.swing.JTextField jTextFieldCheckOutDate;
+    private javax.swing.JTextField jTextFieldCheckPhone;
     private javax.swing.JTextField jTextFieldCountry;
     private javax.swing.JTextField jTextFieldDoubleRoom;
     private javax.swing.JTextField jTextFieldEmail;

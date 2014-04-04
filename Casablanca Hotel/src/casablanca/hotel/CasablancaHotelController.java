@@ -5,6 +5,10 @@
 
 package casablanca.hotel;
 import casablanca.booking.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 /**
 *
@@ -17,28 +21,39 @@ import casablanca.booking.*;
 
 public class CasablancaHotelController {
     
-          private bookingRegister currentBooking;       // Order in focus
+          private BookingRegister currentBooking;       
 	  private DBFacade dbf;
+//          private BookingHotelPrice currentBookingPrice;
 	  
 	  public CasablancaHotelController()
 	  {
 	    currentBooking = null;
 	    dbf = DBFacade.getInstance();
 	  }
-	 
-	  public bookingRegister getBooking(int ph)
+          
+           public BookingRegister getBookingSearch(int Phone)
 	  {
-	    currentBooking = dbf.getBooking(ph);
+	    currentBooking = dbf.getBookingSearch(Phone);
 	    return currentBooking;
 	  }
+          
+//           public BookingHotelPrice getPrice(int SR)
+//	  {
+//	    currentBookingPrice = dbf.getBookingPrice(SR);
+//	    return currentBookingPrice;
+//	  }
     
      
-    public bookingRegister createNewBooking(int p, int cid, int cod, String Name, String Agency, String Email, String Address, String Country)
+    public BookingRegister createNewBooking(String GuestName, String GuestLastName, String GuestAddress, 
+            String GuestCountry, String GuestEmail, int Phone, int CheckInDate, int CheckOutDate, 
+            String Agency, String RoomPrice, int SingleRoom, int DoubleRoom, int FamilyRoom)
 	  {
-	      //== create order object with ono=0
-	      currentBooking = new bookingRegister(p, cid, cod, Name, Email, Address, Agency, Country);
+	   
+	      currentBooking = new BookingRegister(GuestName, GuestLastName, GuestAddress, GuestCountry, 
+                      GuestEmail, Phone, CheckOutDate, CheckInDate, Agency, RoomPrice, 
+                      SingleRoom, DoubleRoom, FamilyRoom);
 	      
-	      //== save and get DB-generated unique ono
+	     
 	      boolean status = dbf.saveNewBooking(currentBooking);
 	      if (!status) //fail!
 	        currentBooking = null;
@@ -46,7 +61,30 @@ public class CasablancaHotelController {
 	      return currentBooking;
 
 }
+    
+    public String getSearchDetailsToString()
+	  {
+	    if (currentBooking != null)
+	      return currentBooking.searchToString();
+	    else
+	      return null;
+	  }
+//    public BookingHotelPrice createNewBookingPrice(String RoomPrice, int SingleRoom, int DoubleRoom, int FamilyRoom){
+//        
+//    
+//      currentBookingPrice = new BookingHotelPrice(RoomPrice, SingleRoom, 
+//                      DoubleRoom, FamilyRoom);
+//	      
+//	     
+//	      boolean status = dbf.saveNewBookingPrice(currentBookingPrice);
+//	      if (!status) //fail!
+//	        currentBookingPrice = null;
+//              
+//              
+//
+//	      return currentBookingPrice;
+//
+//}
+    }
 
 
-
-}

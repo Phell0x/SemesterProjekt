@@ -17,8 +17,8 @@ import java.sql.SQLException;
 
 public class DBConnector {
 
-	  private static String id = "cphtn17";						//Insert ORACLE id and password
-	  private static String pw = "cphtn17";
+	  private static String id = "SEM2_GR14";						//Insert ORACLE id and password
+	  private static String pw = "SEM2_GR14";
 	 
           
 	  public Connection getConnection()
@@ -28,7 +28,7 @@ public class DBConnector {
 	    {  
 	      Class.forName("oracle.jdbc.driver.OracleDriver");
 	      con = DriverManager.getConnection(
-	          "jdbc:oracle:thin:@datdb.cphbusiness.dk:1521:dat", DBConnector.id,  DBConnector.pw );  
+	          "jdbc:oracle:thin:@datdb.cphbusiness.dk:1521:dat", id, pw );  
 	    }
 	    catch (ClassNotFoundException | SQLException e) 
 	    {   

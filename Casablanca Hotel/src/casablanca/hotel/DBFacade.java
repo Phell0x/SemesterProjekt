@@ -32,11 +32,26 @@ public class DBFacade {
         return instance;
     }
 
-    public bookingRegister getBooking(int ph) {
-        return bm.getBooking(ph, con);
-    }
+   
 
-    public boolean saveNewBooking(bookingRegister br) {
+    public boolean saveNewBooking(BookingRegister br) {
         return bm.saveNewBooking(br, con);
     }
+    
+//  public BookingHotelPrice getBookingPrice(int SR) {
+//      
+//  
+//        return bm.getBookingPrice(SR, con);           
+//}
+//  
+//   public boolean saveNewBookingPrice(BookingHotelPrice bhp) {
+//        return bm.saveNewBookingPrice(bhp, con);
+//    }
+    	  public BookingRegister getBookingSearch(int Phone) 
+	  {
+		  return bm.getBookingSearch(Phone, con);	      
+	  }
+	
 }
+    
+    
